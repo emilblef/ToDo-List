@@ -1,29 +1,40 @@
-const form = document.querySelector('form');
-const ul = document.querySelector('ul');
+const form = document.querySelector('.addForm');
+const ul = document.querySelector('.tasks');
 const liTasks = document.getElementsByClassName('task');
-const inputTask = document.querySelector('.add input');
+const inputTask = document.querySelector('.addInput');
 const taskNumber = document.querySelector('.list h3 span');
-const inputSearch = document.querySelector('.find input');
+const inputSearch = document.querySelector('.findInput');
 let liElements;
 
 
 const removeTask = (e) => {
-    e.target.parentNode.remove();
-    taskNumber.textContent = liTasks.length;
+    if (inputSearch.value !== '') {
+        alert('Wyczyść pole wyszukiwarki')
+    } else {
+        e.target.parentNode.remove();
+        taskNumber.textContent = liTasks.length;
+    }
 }
 
 const addTask = (e) => {
     e.preventDefault();
     const taskName = inputTask.value;
-    if (taskName === "") return;
-    const task = document.createElement('li');
-    task.className = 'task';
-    task.innerHTML = taskName + '  <button>Usuń [ X ]</button>';
-    ul.appendChild(task);
-    inputTask.value = "";
-    taskNumber.textContent = liTasks.length;
-    liElements = document.querySelectorAll('li');
-    task.querySelector('button').addEventListener('click', removeTask);
+    if (taskName === "") {
+        alert('Wpisz nazwę zadnia');
+        return
+    };
+    if (inputSearch.value !== '') {
+        alert('Wyczyść pole wyszukiwarki')
+    } else {
+        const task = document.createElement('li');
+        task.className = 'task';
+        task.innerHTML = taskName + '  <button class="removeBtn">Usuń [ X ]</button>';
+        ul.appendChild(task);
+        inputTask.value = "";
+        taskNumber.textContent = liTasks.length;
+        liElements = document.querySelectorAll('li');
+        task.querySelector('button').addEventListener('click', removeTask);
+    }
 }
 
 form.addEventListener('submit', addTask);

@@ -7,154 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>To Do App</title>
     <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            position: relative;
-            min-height: 100vh;
-            width: 100%;
-            max-width: 1024px;
-            margin: 0 auto;
-            font-family: 'Special Elite', cursive;
-            background-image: url('bgc.jpg');
-            background-position: center center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        .wrapper {
-            position: absolute;
-            justify-content: flex-start;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 1024px;
-            min-height: 100%;
-            background-color: rgba(0,0,0,0.7);
-        }
-        .add {
-            margin: 10% 0 5% 0;
-            width: 100%;
-            height: 20%;
-        }
-        .add form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            width: 100%;
-            height: 100%;
-        }
-        .add form input, .find input {
-            width: 80%;
-            padding: 10px;
-            font-family: 'Special Elite', cursive;
-            background-color: rgba(255,255,255, 0.4);
-            color: black;
-            border-style: none;
-            font-size: 17px;
-            margin-bottom: 20px;
-        }
-        .add form input::placeholder, .find input::placeholder {
-            color: black;
-            font-family: 'Special Elite', cursive;
-            font-size: 17px;
-        }
-        .add form button {
-            width: 60%;
-            max-width: 300px;
-            font-size: 17px;
-            border-style: none;
-            font-family: 'Special Elite', cursive;
-            padding: 15px 10px;
-            cursor: pointer;
-            border-radius: 8px;
-            color: white;
-            border: 2px solid black;
-            text-shadow: 2px 2px 3px black;
-            background-color: rgba(0,255,0, 0.3);
-            transition: .2s;
-        }
-        .add form button:hover {
-            background-color: rgba(255,255,255, 0.1);
-            color: rgb(0,255,0);
-            text-shadow: 1px 1px 1px black;
-        }
-        .find {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            height: 20%;
-        }
-        .find h3, .list h3 {
-            font-size: 23px;
-            color: white;
-            text-shadow: 2px 2px 3px black;
-            margin-top: 10px;
-            margin-bottom: 15px;
-        }
-        .list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-        .list h3 {
-            align-self: center;
-        }
-        .list ul {
-            align-self: center;
-            list-style-position: inside;
-            width: 80%;
-            padding: 10px 20px;
-            background-color: rgba(255,255,255, 0.7);
-            min-height: 300px;
-        }
-        .list ul li {
-            font-size: 19px;
-            margin: 15px 0;
-            line-height: 23px;
-            overflow: hidden;
-        }
-        .list ul li button {
-            margin-left: 15px;
-            text-transform: uppercase;
-            font-family: 'Special Elite', cursive;
-            font-weight: bolder;
-            font-size: 17px;
-            color: rgb(200, 0, 0);
-            background-color: black;
-            border: none;
-            padding: 5px 10px;
-            transition: .3s;
-        }
-        .list ul li button:hover {
-            background-color: rgb(200, 0, 0);
-            color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="wrapper">
         <div class="add">
-            <form>
-                <input type="text" placeholder="Wpisz zadanie">
-                <button>Dodaj zadanie</button>
+            <form class="addForm">
+                <input type="text" class="addInput" placeholder="Wpisz zadanie">
+                <button class="btn">Dodaj zadanie</button>
             </form>
         </div>
         <div class="find">
-            <h3>Wyszukaj zadanie:</h3>
-            <input type="text" placeholder="">
+            <h3 class="findTask">Wyszukaj zadanie:</h3>
+            <input type="text" class="findInput" placeholder="">
         </div>
         <div class="list">
-            <h3>Zadania (<span>0</span>):</h3>
-            <ul>
+            <h3 class="taskList">Zadania (<span>0</span>):</h3>
+            <ul class="tasks">
 
             </ul>
         </div>
