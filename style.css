@@ -63,7 +63,8 @@ body {
     font-size: 17px;
 }
 
-.btn {
+.btn,
+.clear {
     width: 60%;
     max-width: 300px;
     font-size: 17px;
@@ -79,9 +80,21 @@ body {
     transition: .2s;
 }
 
-.btn:hover {
+.clear {
+    margin-top: 30px;
+    background-color: rgb(177, 0, 0);
+}
+
+.btn:hover,
+.clear:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: rgb(0, 255, 0);
+    text-shadow: 1px 1px 1px black;
+}
+
+.clear:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(214, 0, 0);
     text-shadow: 1px 1px 1px black;
 }
 

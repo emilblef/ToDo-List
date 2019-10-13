@@ -1,5 +1,6 @@
 const form = document.querySelector('.addForm');
 const ul = document.querySelector('.tasks');
+const clear = document.querySelector('.clear')
 const liTasks = document.getElementsByClassName('task');
 const inputTask = document.querySelector('.addInput');
 const taskNumber = document.querySelector('.list h3 span');
@@ -16,6 +17,14 @@ const removeTask = (e) => {
     }
 }
 
+const removeAll = (e) => {
+    e.preventDefault();
+    ul.innerHTML = '';
+    taskNumber.textContent = liTasks.length;
+}
+
+clear.addEventListener('click', removeAll);
+
 const addTask = (e) => {
     e.preventDefault();
     const taskName = inputTask.value;
@@ -28,7 +37,7 @@ const addTask = (e) => {
     } else {
         const task = document.createElement('li');
         task.className = 'task';
-        task.innerHTML = taskName + '  <button class="removeBtn">Usuń [ X ]</button>';
+        task.innerHTML = taskName + '  <button class="removeBtn">Usuń</button>';
         ul.appendChild(task);
         inputTask.value = "";
         taskNumber.textContent = liTasks.length;
